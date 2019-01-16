@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Data</title>
+</head>
+<body>
+    <form method="post" action="/user/update/{{ employee.id }}">
+        <table align="center">
+            {% csrf_token %}
+            <tr>
+                <td>Name</td>
+                <td><input type="text" value="{{ employee.name }}" name="user_name" placeholder="{{ employee.name }}"/></td>
+            </tr>
+            <tr>
+                <td>E-mail</td>
+                <td><input value="{{ employee.email }}" type="email" name="user_email" placeholder="{{ employee.email }}"/></td>
+            </tr>
+            <tr>
+                <td>Mobile</td>
+                <td><input value="{{ employee.phone }}" type="text" name="user_phone" placeholder="{{ employee.phone }}"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit">Save Changes</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div style="text-align: center; margin-top: 50px">
+        <a href="/">View Data</a> | <a href="/user/create_page/">Create New</a>
+    </div>
+</body>
+
+</html>

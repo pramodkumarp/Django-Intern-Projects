@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>Subject</td>
+            <td><input type="text" name="subject" placeholder="Enter subject"></td>
+        </tr>
+        <tr>
+            <td>To-Email</td>
+            <td><input type="email" name="toemail" placeholder="Email to"></td>
+        </tr>
+        <tr>
+            <td>Message</td>
+            <td><textarea name="message" placeholder="Enter your message here.........."></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="submit">Send Email</button> </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

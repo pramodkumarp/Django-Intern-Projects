@@ -1,0 +1,96 @@
+{% extends "backEnd/master.html" %}
+{% block title %}Edit User Data{% endblock %}
+
+{% block body %}
+
+    {% load static %}
+
+    <div class="form_area">
+    <div class="forms">
+        <div style="width: 300px; height: auto; margin: auto">
+            {% if employee.user_image == "" and employee.user_gender == "Male" %}
+                <img src="{% static 'default_images/male.png' %}" width="250" height="200" alt="no image found" title="Python" style="border: 2px solid darkmagenta;padding: 20px; background-color: ivory"/>
+            {% elif employee.user_image == "" and employee.user_gender == "Female" %}
+                <img src="{% static 'default_images/female.jpg' %}" width="250" height="200" alt="no image found" title="Python" style="border: 2px solid darkmagenta;padding: 20px; background-color: ivory"/>
+            {% elif employee.user_image == "" and employee.user_gender == "Others" %}
+                <img src="{% static 'default_images/others.png' %}" width="250" height="200" alt="no image found" title="Python" style="border: 2px solid darkmagenta;padding: 20px; background-color: ivory"/>
+            {% else %}
+                <img src="{{ employee.user_image.url }}" width="250" height="200" alt="no image found" title="Python" style="border: 2px solid darkmagenta;padding: 20px; background-color: ivory"/>
+            {% endif %}
+        </div>
+        <h1 style="color: blue;text-align: center">Edit {{ employee.user_name }}'s details</h1>
+        <form method="post" action="/edit/{{ employee.id }}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td id="register_title">User Name:</td>
+                    <td><input id="register_input" type="text" name="user_name" value="{{ employee.user_name }}" placeholder="{{ employee.user_name }}" required></td>
+                </tr>
+                <tr>
+                    <td id="register_title">User E-mail:</td>
+                    <td><input id="register_input" type="email" name="user_email" value="{{ employee.user_email }}" placeholder="{{ employee.user_email }}" required></td>
+                </tr>
+                <tr>
+                    <td id="register_title">Phone:</td>
+                    <td><input id="register_input" type="text" name="user_phone" value="{{ employee.user_phone }}" placeholder="{{ employee.user_phone }}" required></td>
+                </tr>
+                <tr>
+                    <td id="register_title">Country:</td>
+                    <td>
+                        <select id="register_menu" name="user_country" required>
+                            <option>{{ employee.user_country }}</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="India">India</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Singapore">Singapore</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="register_title">City:</td>
+                    <td><input id="register_input" type="text" name="user_city" value="{{ employee.user_city }}" placeholder="{{ employee.user_city }}" required></td>
+                </tr>
+                <tr>
+                    <td id="register_title">Sate:</td>
+                    <td><input id="register_input" type="text" name="user_state" value="{{ employee.user_state }}" placeholder="{{ employee.user_state}}" required></td>
+                </tr>
+                <tr>
+                    <td id="register_title">Zip:</td>
+                    <td><input id="register_input" type="text" name="user_zip" value="{{ employee.user_zip }}" placeholder="{{ employee.user_zip }}" required></td>
+                </tr>
+                <tr>
+                    <td id="register_title">Gender:</td>
+                    <td>
+                        <select id="register_menu" name="user_gender" required>
+                            <option>{{ employee.user_gender }}</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="register_title">About User:</td>
+                    <td>
+                        <textarea id="register_textarea" name="user_about" placeholder="{{ employee.user_about }}">{{ employee.user_about }}</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="register_title">Select User Image:</td>
+                    <td>
+                        <input id="register_file_input" type="file" name="user_image">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button id="register_button1" type="submit">Update User</button>
+                        <button id="register_button2" type="submit">Changed Mind</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "backEnd/master.html" %}
+
+{% block title %}User Details{% endblock %}
+
+{% block body %}
+    {% load static %}
+
+    <div class="form_area">
+    <div class="forms">
+        <div style="width: 300px; height: auto; margin: auto; background-color: whitesmoke">
+            {% if employee.user_image == "" and employee.user_gender == "Male" %}
+                <img src="{% static 'default_images/male.png' %}" width="250" height="200" alt="no image found" title="Python" style="border: 4px solid darkred;padding: 20px"/>
+            {% elif employee.user_image == "" and employee.user_gender == "Female" %}
+                <img src="{% static 'default_images/female.jpg' %}" width="250" height="200" alt="no image found" title="Python" style="border: 4px solid darkred;padding: 20px"/>
+            {% elif employee.user_image == "" and employee.user_gender == "Others" %}
+                <img src="{% static 'default_images/others.png' %}" width="250" height="200" alt="no image found" title="Python" style="border: 4px solid darkred;padding: 20px"/>
+            {% else %}
+                <img src="{{ employee.user_image.url }}" width="250" height="200" alt="no image found" title="Python" style="border: 4px solid darkred;padding: 20px"/>
+            {% endif %}
+        </div>
+        <h1 style="color: olivedrab;text-align: center">{{ employee.user_name}}'s Full Details</h1>
+        <table>
+            <tr>
+                <td id="register_title">User Name:</td>
+                <td id="register_user_info">{{ employee.user_name }}</td>
+            </tr>
+            <tr>
+                <td id="register_title">User E-mail:</td>
+                <td id="register_user_info">{{ employee.user_email }}</td>
+            </tr>
+            <tr>
+                <td id="register_title">Phone:</td>
+                <td id="register_user_info">{{ employee.user_phone }}</td>
+            </tr>
+            <tr>
+                <td id="register_title">Country:</td>
+                <td id="register_user_info">{{ employee.user_country }}</td>
+            </tr>
+            <tr>
+                <td id="register_title">City:</td>
+                <td id="register_user_info">{{ employee.user_city }}</td>
+            </tr>
+            <tr>
+                <td id="register_title">Sate:</td>
+                <td id="register_user_info">{{ employee.user_state }}</td>
+            </tr>
+            <tr id="documentary">
+                <td id="register_title">Zip:</td>
+                <td id="register_user_info">{{ employee.user_zip }}</td>
+            </tr>
+            <tr>
+                <td id="register_title">Gender:</td>
+                <td id="register_user_info">{{ employee.user_gender }}</td>
+            </tr>
+			<tr>
+                <td id="register_title">Creation Data:</td>
+                <td id="register_user_info">{{ employee.user_creation_date }}</td>
+            </tr>
+			<tr>
+                <td id="register_title">Last Updating Data:</td>
+                <td id="register_user_info">
+                    {% if employee.user_info_last_update != None %}
+                            {{ employee.user_info_last_update }}
+                        {% else %}
+                            Never updated before
+                        {% endif %}
+                </td>
+            </tr>
+            {% if employee.user_about != "" %}
+                <tr id="documentary">
+                    <td id="register_title">About User:</td>
+                    <td id="user_details_text">{{ employee.user_about }}</td>
+                </tr>
+            {% else %}
+
+            {% endif %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}

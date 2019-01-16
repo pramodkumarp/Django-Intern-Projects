@@ -1,0 +1,47 @@
+{% extends 'frontend/public/master_layout.html' %}
+
+{% block title %}Login{% endblock %}
+
+
+{% block body %}
+    <div class="content_area">
+    <div class="content">
+        <form method="post">
+        {% csrf_token %}
+        <h2 style="text-align: center">Login to your account</h2>
+        <div style="width: 350px; margin: auto;margin-top: 20px;">
+            <table>
+                <tr>
+                    <td><label for="{{ form.email.html_name }}">{{ form.email.label }}</label> </td>
+                    <td>{{ form.email }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="color: red">{{ form.email.errors }}</td>
+                </tr>
+                <tr>
+                    <td><label for="{{ form.password.html_name }}">{{ form.password.label }}</label> </td>
+                    <td>{{ form.password }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="color: red">{{ form.password.errors }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit" style="cursor: pointer">Login</button><a href="" style="margin-left: 10px;">Forgot Password?</a> </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="color: red">
+                        {% for msg in messages %}
+                            {{ msg }}
+                        {% endfor %}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

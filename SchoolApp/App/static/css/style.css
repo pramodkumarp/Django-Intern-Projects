@@ -1,0 +1,237 @@
+body{margin: 0;padding:0;background-color: azure;}.float_left{float: left;}.float_right{float: right;}.header_area{width: 100%;mheight: 70px;background-color: purple;border-bottom: 2px solid deeppink;}.header{width: 100%;height: 70px;}.logo_area{width:400px;height: auto;}#title{color: beige;margin-top: 20px;}.menu_area{width: 600px;height: auto;margin-top: 25px;margin-right: -300px;}#menu{width: 200px; border: 2px solid #ffffff; height: 30px;background-color: #E3008C;text-decoration: none;padding: 10px;border-radius: 10px;margin-left: 20px;font-weight: bold;font-family: Arial;}#menu:hover{width: 200px;height: 30px;background-color: #3774A7;color: white;text-decoration: none;padding: 10px;border-radius: 10px;margin-left: 20px;font-weight: bold;font-family: Arial;}
+.view_area{
+    width: 100%;
+    min-height: 500px;
+}
+.views{
+    width: 100%;
+    min-height: 500px;
+}
+#edit{
+    text-decoration: none;
+    background-color: green;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+}
+#delete{
+    text-decoration: none;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+.form_area{
+    width: 100%;
+    min-height: 500px;
+    margin-top: 50px;
+}
+.forms{
+    width: 750px;
+    background-color: beige;
+    margin: auto;
+    padding: 50px;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+}
+#register_input{
+    width: 500px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    font-family: Arial;
+    font-size: 18px;
+    padding: 5px;
+    margin-top: 10px;
+}
+#register_title{
+    font-size: 20px;
+    font-weight: bold;
+    color: darkblue;
+    margin-top: 10px;
+}
+#register_menu{
+    width: 510px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+#register_textarea{
+    width: 490px;
+    height: 100px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    font-family: Arial;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
+}
+#register_file_input{
+    margin-top: 10px;
+    font-size: 18px;
+    margin-left: 20px;
+}
+#register_button{
+    width: 510px;
+    height: 40px;
+    background-color: forestgreen;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+#register_button:hover{
+    width: 510px;
+    height: 40px;
+    background-color: limegreen;
+    color: darkgreen;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+/*button1*/
+#register_button1{
+    width: 250px;
+    height: 40px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+#register_button1:hover{
+    width: 250px;
+    height: 40px;
+    background-color: limegreen;
+    color: darkgreen;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+/*button2*/
+#register_button2{
+    width: 250px;
+    height: 40px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+#register_button2:hover{
+    width: 250px;
+    height: 40px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#register_user_info{
+    width: 500px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 10px;
+    color: purple;
+    font-family: Arial;
+}
+#user_details_text{
+    width: 500px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    color: darkgreen;
+    font-family: "Times New Roman";
+}
+#btn1{
+    background-color: green;
+    color: white;
+    border: none;
+    width: 250px;
+    height: 40px;
+    font-family: Arial;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 12px;
+}
+#btn1:hover{
+    background-color: limegreen;
+    color: darkgreen;
+    border: none;
+    width: 250px;
+    height: 40px;
+    font-family: Arial;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+#btn2{
+    background-color: red;
+    color: white;
+    border: none;
+    width: 250px;
+    height: 40px;
+    font-family: Arial;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+#btn2:hover{
+    background-color: midnightblue;
+    color: orangered;
+    border: none;
+    width: 250px;
+    height: 40px;
+    font-family: Arial;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+.model_area{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+.model{
+    background: rgba(0, 0, 0, .7);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+.model_confirm{
+    width: 500px;
+    height: 150px;
+    background-color: white;
+    position: fixed;
+    top: 180px;
+    left: 400px;
+    border-radius: 10px;
+}

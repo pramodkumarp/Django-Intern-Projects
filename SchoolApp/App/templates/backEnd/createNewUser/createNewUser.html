@@ -1,0 +1,88 @@
+{% extends "backEnd/master.html" %}
+
+{% load static %}
+
+{% block title %}Create New User{% endblock %}
+
+{% block body %}
+
+    <div class="form_area">
+    <div class="forms">
+        <div style="width: 255px;height: 105px; margin: auto;">
+            <img src="{% static 'const_images/django-logo.png' %}" width="250" height="100" alt="image not found"/>
+        </div>
+        <h1 style="color: blue;text-align: center">Register new user here</h1>
+        <form method="post" action="/add_user/" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td id="register_title">User Name:</td>
+                    <td><input id="register_input" type="text" name="user_name" placeholder="Enter user name" required></td>
+                </tr>
+                <tr>
+                    <td id="register_title">User E-mail:</td>
+                    <td><input id="register_input" type="email" name="user_email" placeholder="Enter user email" required></td>
+                </tr>
+                <tr>
+                    <td id="register_title">Phone:</td>
+                    <td><input id="register_input" type="text" name="user_phone" placeholder="Enter user contact no" required></td>
+                </tr>
+                <tr>
+                    <td id="register_title">Country:</td>
+                    <td>
+                        <select id="register_menu" name="user_country" required>
+                            <option>-- Select Country --</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="India">India</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Singapore">Singapore</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="register_title">City:</td>
+                    <td><input id="register_input" type="text" name="user_city" placeholder="Enter user city" required></td>
+                </tr>
+                <tr>
+                    <td id="register_title">Sate:</td>
+                    <td><input id="register_input" type="text" name="user_state" placeholder="Enter user state" required></td>
+                </tr>
+                <tr>
+                    <td id="register_title">Zip:</td>
+                    <td><input id="register_input" type="text" name="user_zip" placeholder="Enter user zip code / Postal code" required></td>
+                </tr>
+                <tr>
+                    <td id="register_title">Gender:</td>
+                    <td>
+                        <select id="register_menu" name="user_gender" required>
+                            <option>-- Select Gender --</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="register_title">About User:</td>
+                    <td>
+                        <textarea id="register_textarea" name="user_about" placeholder="Write something about user ......"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="register_title">Select User Image:</td>
+                    <td>
+                        <input id="register_file_input" type="file" name="user_image">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button id="register_button" type="submit">Register New User</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

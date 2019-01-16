@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/competition-success/512/award_star_medal_gold_bronze_competitive_trophy_medal_winning_popularity_glory_high_awards_winners_badge_hero_victory_hit_proud_honor_leadership_competition_prize_premium_-512.png">
+    <meta charset="UTF-8">
+    <title>{% block title%}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'public/frontend/css/style.css' %}">
+</head>
+<body>
+{% include 'frontend/public/includes/header.html' %}
+{% block body %}{% endblock %}
+</body>
+</html>

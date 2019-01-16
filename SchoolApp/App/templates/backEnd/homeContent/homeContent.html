@@ -1,0 +1,49 @@
+{% extends 'backEnd/master.html' %}
+
+{% block title%}Python App | Home{% endblock %}
+
+
+{% block body %}
+
+    {% if employee.count != 0 %}
+    <div class="view_area">
+    <div class="views">
+        <table width="100%"  style="margin-top: 50px; text-align: center; font-size: 20px;padding: 20px">
+            <thead style="background-color: burlywood; color: white; font-size: 22px">
+                <th>Id</th>
+				<th style="padding: 10px">User Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+				<th>Creation Data</th>
+				<th>Last Updating Data</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+            {% for emp in employee %}
+                <tr style="background-color: whitesmoke; color:  darkslategray">
+					<td>{{emp.id}}</td>
+                    <td style="padding: 10px;"><a href="user_details/{{ emp.id }}" style="text-decoration: none; color: blue; text-decoration: underline;">{{ emp.user_name }}</a></td>
+                    <td>{{ emp.user_email }}</td>
+                    <td>{{ emp.user_gender }}</td>
+                    <td>{{ emp.user_creation_date }}</td>
+                    <td>
+                        {% if emp.user_info_last_update != None %}
+                            {{ emp.user_info_last_update }}
+                        {% else %}
+                            Never updated before
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="/edit_user/{{ emp.id }}" id="edit">Edit</a>  <a href="/delete/{{ emp.id }}" style="cursor: pointer" id="delete">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+    {% else %}
+        {% include "backEnd/includes/data_not_found_message.html" %}
+    {% endif %}
+
+{% endblock %}

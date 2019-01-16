@@ -1,0 +1,92 @@
+{% extends 'frontend/public/master_layout.html' %}
+
+{% block title %}Signup Account{% endblock %}
+
+{% block body %}
+    <style>
+        #style_gender ul li{
+            list-style: none;
+            display: inline;
+        }
+    </style>
+<div class="content_area">
+    <div class="content">
+        <form method="post">
+        {% csrf_token %}
+        <h2 style="text-align: center">Register an account here</h2>
+        <div style="width: 350px; margin: auto;margin-top: 20px;">
+            <table>
+                <tr>
+                    <td><label for="{{ name_form.fname.html_name }}">{{ name_form.fname.label }}</label> </td>
+                    <td>{{ name_form.fname }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="color: red">{{ name_form.fname.errors }}</td>
+                </tr>
+                <tr>
+                    <td><label for="{{ name_form.lname.html_name }}">{{ name_form.lname.label }}</label> </td>
+                    <td>{{ name_form.lname }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="color: red">{{ name_form.lname.errors }}</td>
+                </tr>
+                <tr>
+                    <td><label for="{{ user_form.email.html_name }}">{{ user_form.email.label }}</label> </td>
+                    <td>{{ user_form.email }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="color: red">{{ user_form.email.errors }}</td>
+                </tr>
+                <tr>
+                    <td><label for="{{ user_form.password.html_name }}">{{ user_form.password.label }}</label> </td>
+                    <td>{{ user_form.password }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="color: red">{{ user_form.confirm_password.errors }}</td>
+                </tr>
+                <tr>
+                    <td><label for="{{ user_form.confirm_password.html_name }}">{{ user_form.confirm_password.label }}</label> </td>
+                    <td>{{ user_form.confirm_password }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="color: red">{{ user_form.confirm_password.errors }}</td>
+                </tr>
+                <tr>
+                    <td><label for="{{ gender_form.gender.html_name }}">{{ gender_form.gender.label }}</label> </td>
+                    <td id="style_gender">{{ gender_form.gender }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="color: red">{{ gender_form.gender.errors }}</td>
+                </tr>
+                <tr>
+                    <td><label for="{{ bd_form.birthday.html_name }}">{{ bd_form.birthday.label }}</label> </td>
+                    <td>{{ bd_form.birthday }}{{ bd_form.birthmonth }}{{ bd_form.birthyear }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="color: red">{{ bd_form.birthday.errors }}{{ bd_form.birthmonth.errors }}{{ bd_form.birthyear.errors }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit" style="cursor: pointer">Signup</button> </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        {% for msg in messages %}
+                            {{ msg }}
+                        {% endfor %}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

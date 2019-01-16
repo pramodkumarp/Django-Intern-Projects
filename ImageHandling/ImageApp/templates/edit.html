@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<form method="post" action="/update/{{ img.id }}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" name="name" value="{{ img.name }}" placeholder="{{ img.name }}"/>
+    <br>
+    <br>
+    <input type="file" name="image" />
+    <br>
+    <img src="{{ img.image.url }}" width="300" height="300" alt="no image found">
+    <br>
+    <button type="submit">Update</button>
+</form>
+<a href="/">Home</a>
+</body>
+</html>
